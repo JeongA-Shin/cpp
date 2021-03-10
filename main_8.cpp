@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 int main() {
@@ -6,6 +7,7 @@ int main() {
 	//1.
 	//(는 +1, )는 -1로 치환해서 생각하자.
 	//그러면 누적값이 0이어야 올바른 괄호가 된다.
+
 
 	// 2. 
 	// )( 이거 같은 경우에는 누적값이 0이라도 안 된다.
