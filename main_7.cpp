@@ -2,28 +2,44 @@
 #include <string>
 using namespace std;
 
+
 int main() {
 
 
+	
+	//cout << 'A' + 32 << endl; 
+	// printed as '97'! not 'a'
+
+	//cout << int('A') << endl; //65
+	
+	
+	
+	
+	
 	string input;
-
-	getline(cin,input); //cin이 아니라! getline으로 입력을 받아야! 띄어쓰기에 신경쓰지 않고! 한 줄로 입력받을 수 있음
-
-	string res;
+	
+	getline(cin,input);
 
 	int length = input.length();
 
 	for (int i = 0; i < length; i++) {
-		if (input[i] > 64 && input[i] < 91) { //대문자이면
-			input[i] = input[i] + 32; //소문자로 바꿈
+
+		if( input[i] == ' ') {
+			//do nothing
+		}
+		else if ( int(input[i]) > 64 && int(input[i]) < 91) {
+			cout << char(input[i] + 32);
+		}
+		else {
+			cout << (input[i]);
 		}
 
-		if (input[i] != ' ') { //공백인지 확인할 때는 ' '이다!!! " "로 하면 오류남 !!!
-			res += input[i];
-		}
 	}
 
-	cout << res << endl;
 
+	cout << endl;
+	
+	
+	
 
 }
