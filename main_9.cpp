@@ -2,62 +2,40 @@
 using namespace std;
 
 int main() {
+
+	int N;
+	cin >> N;
+
+	// 1에서 N까지의 약수의 개수들을 저장하는 배열
+	// an array that stores the number of divisors from 1 to N
+	int* cnt = new int[N+1];
+
+	 //0으로 초기화
+	//Initialize to 0
+	for (int i = 1; i < N+1; i++) {
+		cnt[i] = 0;
+	}
 	
 
-	/*
-	int input;
-
-	cin >> input;
-
-
-	for (int i = 1; i < input+1; i++) {
-
-		int count = 0;
+	// 1에서 N까지 돌면서(i) i에 해당되는 약수의 개수(j) 찾아서 배열에 넣기
+	// Find the number of divisors (j) corresponding to i and put them in the array, turning from 1 to N
+	for (int i = 1; i < N+1; i++) {
 
 		for (int j = 1; j < i+1; j++) {
 			if (i % j == 0) {
-				count++;
+				cnt[i] += 1;
 			}
 		}
 
-		cout << count << " ";
 	}
 
 
-
-	이렇게 해도 결과는 나오긴 하지만 시간이 초과된다.
-	(O(n^2))
-	(input이 3000이상이면)
-
-	*/
-
-
-
-	//그래서 아래의 코드처럼 하면 시간이 초과되지 않는다.
-
-	int cnt[10];//cnt값들이 저장됨
-
-	for (int k = 0; k < 10; k++) {
-		cnt[k] = 0;
+	for (int i = 1; i < N + 1; i++) {
+		cout << cnt[i]<<" ";
 	}
 
-	int input;
+	cout << endl;
 
-	cin >> input;
-
-	 
-	for (int i = 1; i < input + 1; i++) {
-		//j는 i의 배수를 따라가므로 시작도 i부터 시작한다.
-		for (int j = i; j < input + 1; j=j+i) { //j+i를 함으로써 1의 배수(i=1일때이므로 한 칸씩)
-			// i가 2면 2의 배수를 찾아서(2칸씩)...이렇게 들어가는 거임
-			cnt[j]++ ;
-		}
-	}
-
-
-	for (int i = 1; i < input+1; i++) {
-		cout << cnt[i] << " ";
-	}
-	
+	delete[] cnt;
 
 }
