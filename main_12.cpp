@@ -6,40 +6,29 @@ using namespace std;
 
 int main() {
 
+	int N;
 
-	int n;
+	cin >> N;
 
-	cin >> n;;
-
-	int sum = 0; //현재 어디까지 봤는지 보여줌 ex) 9까지 봄, 99까지 봄...
-
-	int c = 1; // count, 1의 자리 수, 두 자리수, 세 자리 수
-	int d = 9; //해당 자릿수의 숫자의 개수
-	//즉 시작할 때는 1의 자리 숫자에서 시작하므로 d=1, 일의 자리 숫자는 9개이므로 d=9
+	int cnt = 1; // 개수(몇 자리 수인지)
+	int standard = 9;
 
 
-	int res = 0;//완전 최종값 //완전 자리의 개수
-
-	// sum+d<n 이게 중요함
-	// n자리수대별로!!!!! 누적된다고 생각하는게 포인트!!!!!!!!!!!!
-	//sum은 현재까지 누적된 숫자의 개수 (예: 87이면 숫자의 개수는 87. 당연히)
-	//d는 해당 자릿수의 숫자의 개수
-	//그러므로 만약에 input이 256이면 두 자리수까지는 가겠지만 세 자리수부터는 +d를 하면 n이 넘어가버림
-	while (sum + d < n) {
-
-		res = res + d * c; //res값도 누적이 되어야한다!!
-		sum = sum + d;// 현재 몇 번째 숫자까지 봤는지
-		c++; //다음에 올 n 자릿수
-		d = d * 10; //c 자리수에서 총 숫자 몇 개가 있는지
-
+	int sum = 0;
+	int cnt_num = 9;//해당 cnt 당 몇 개의 수가 있는지
+	int previous_standard= 0;
+	while (N > standard) {
+		sum += cnt * cnt_num;
+		cnt++;
+		cnt_num *= 10;//9개 90개 900개
+		previous_standard = standard;
+		standard = standard * 10 + 9; //  9 99 999
 	}
 
-	//나머지 남은( 자리수 사!이!에 걸쳐진 숫자를 마저 처리함)
 
-	res = res + (n - sum) * c;
+	sum += (N - previous_standard) * cnt;
 
-
-	cout << res << endl;
+	cout << sum << endl;
 
 
 
