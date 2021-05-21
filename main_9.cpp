@@ -1,8 +1,28 @@
 #include <iostream>
 using namespace std;
 
+int cnt[50001];
+
+
 int main() {
 
+
+	int n, i, j;
+
+	cin >> n;
+	for (i = 1; i <= n; i++) {
+		for (j = i; j <= n; j = j + i) {  // 이중배열처럼 생각
+			//i는 약수 개개인이라고 생각. 약수 후보인 i가 해당되는 숫자(즉 인덱스-j)에 일일히 손 드는 것
+			cnt[j]++;
+		} 
+	}
+	for (i = 1; i <= n; i++) {
+		printf("%d ", cnt[i]);
+	}
+
+
+
+	/*  이렇게 하면 time limit이 걸림
 	int N;
 	cin >> N;
 
@@ -37,5 +57,7 @@ int main() {
 	cout << endl;
 
 	delete[] cnt;
+
+	*/
 
 }
