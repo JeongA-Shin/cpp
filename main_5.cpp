@@ -5,6 +5,8 @@ using namespace std;
 
 int main() {
 
+
+	
 	string input;
 
 	cin >> input;
@@ -39,4 +41,5 @@ int main() {
 
 
 	cout << age << " " << gender << endl;
+
 }
