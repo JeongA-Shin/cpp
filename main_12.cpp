@@ -1,9 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
-
-
 int main() {
 
 	int N;
@@ -29,7 +26,5 @@ int main() {
 	sum += (N - previous_standard) * cnt;
 
 	cout << sum << endl;
-
-
 
 }
