@@ -2,43 +2,26 @@
 using namespace std;
 
 int main() {
-
-
-	int compare[10];
-
-	for (int i = 0; i < 10; i++) {
-		compare[i] = 0; // 개수 초기화
-	}
-
-
 	int input;
-
 	cin >> input;
 
-	
-	
+
+	int cnt[10] = { 0 };
 	while (input > 0) {
-		int temp;
-		temp = input % 10; //끝에서부터 본다.
-		compare[temp]++;
-		input = input / 10; //소수점 왼쪽으로 옮김
-		
+		int num = input;
+		int temp = num % 10;
+		cnt[temp]++;
+		input = input / 10;
 	}
 
+
 	int max = 0;
-
 	int res = 0;
-
 	for (int i = 0; i < 10; i++) {
-		if (compare[i] > max) {
-			max = compare[i];
+		if (max <= cnt[i]) {
+			max = cnt[i]; //어차피 i는 커지니까 계속 바꿔주면 답이 여러개인 경우, 제일 큰 수가 들어가게 된다.
 			res = i;
 		}
-		else if (compare[i] == max) {
-			max = compare[i];
-			res = i;
-		}
-		
 	}
 
 	cout << res << endl;
