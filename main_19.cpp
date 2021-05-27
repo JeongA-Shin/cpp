@@ -16,7 +16,6 @@ int main() {
 		arr[i] = height;
 	}
 
-
 	//cnt는 분노 유발자의 수
 	int cnt = N;
 	for (int j = 0; j < N; j++) { // j 는 기준되는 학생
