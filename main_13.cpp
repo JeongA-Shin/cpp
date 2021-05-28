@@ -3,12 +3,10 @@ using namespace std;
 
 int main() {
 
-	
-
 	int input;
 	cin >> input;
 	//test case에서 input인 정수의 크기가 int로 표현될 수 있는 범위를 넘어가서 입력을 int가 아니라!
-	//string으로 받아야함
+	//string으로 받아야함!
 
 
 	int cnt[10] = { 0 };
@@ -18,7 +16,6 @@ int main() {
 		cnt[temp]++;
 		input = input / 10;
 	}
-
 
 	int max = 0;
 	int res = 0;
