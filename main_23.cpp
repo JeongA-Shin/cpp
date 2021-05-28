@@ -1,11 +1,7 @@
 #include <iostream>
 using namespace std;
 
-
-
 int main() {
-
-
 	//왜 하나가 wrong이 뜰까?
 	
 	int N;
