@@ -9,7 +9,6 @@ int main() {
 	
 	/*
 	// 그냥 아스키코드에 해당되는 배열 칸에 cnt 넣기
-	//근데 Wrong answer 뜸 ㅠ
 
 
 	string origin;
@@ -36,7 +35,7 @@ int main() {
 	}
 
 	bool flag = true;
-	for (int j = 0; j < length; j++) {
+	for (int j = 0; j < 140; j++) {
 		if (arr[j] != sec[j]) {
 			cout << "NO" << endl;
 			flag = false;
@@ -56,8 +55,16 @@ int main() {
 	//string은 sort함수로 못 한다. char배열로 해야한다.
 	//근데 time limit뜸
 
+
+	// 이거 때문이었음
+	/*
 	char origin[100];
 	char compare[100];
+	*/
+	//char 문자열은 마지막에 null이 들어감. 그러므로 최대범위보다 한 칸 더 많이 만들어줘야 함
+
+	char origin[101];
+	char compare[101];
 
 
 	cin >> origin;
