@@ -16,9 +16,10 @@ int main() {
 	}
 
 
-	int max = 0;
+	int max = -1000000000;
 	int sum = 0;
 
+	
 	for (int i = 0; i <= N-K; i++) {
 		
 		for (int j=i; j < i + K; j++) {
@@ -34,8 +35,8 @@ int main() {
 		sum = 0;
 	}
 
-
 	cout << max << endl;
+	
 
 	delete[] arr;
 }
