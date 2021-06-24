@@ -1,4 +1,5 @@
 //에라토스테네스의 체
+//for문으로 연산할 때, range+1이 아니라 sqrt(range+1)로 해주면 더 적게 걸린다.
 void Eratosthenes(int range) {
 	int* sieve = new int[range + 1];
 
