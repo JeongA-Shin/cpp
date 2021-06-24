@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+/*
+
  //에라토스테네스의 체
 void Eratosthenes(int range) {
 	int* sieve= new int[range + 1];
@@ -25,6 +27,8 @@ void Eratosthenes(int range) {
 	delete[] sieve;
 }
 
+*/
+
 int main() {
 
 	int N;
@@ -38,12 +42,12 @@ int main() {
 	}
 
 
-	//에라토스테네스의 체 활용
+	//전체 결과를 저장하는 배열
 	int* sieve = new int[fac + 1];
 	sieve = { 0, };
 
 	for (int i = 2; i < fac + 1; i++) {
-		//각 i에 대해 에라토스테네스 체를 만들자
+		//각 i에 대해 각각 에라토스테네스 체를 만들자
 		int* arr = new int[i + 1];
 		for (int j = 2; j < i + 1; j++) {
 			arr[j] = j;
@@ -52,6 +56,7 @@ int main() {
 		for (int k = 2; k < i + 1; k++) {
 			if (arr[k] == 0) continue;
 
+			//배수에 해당되면 0으로 바꿈
 			for (int s = k + k; s < i + 1; s += k) {
 				arr[s] = 0;
 			}
