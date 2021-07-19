@@ -7,7 +7,6 @@ int main() {
 	int N;
 	cin >> N;
 
-
 	vector<int> plus;
 	vector<int> minus;
 
